@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Online Robot Royale, a free multiplayer shooting game. Battle with 15 players, customize your robot, and aim to be the last one standing.">
+    <link rel="canonical" href="https://onlinerobotroyale.com">
+    <title>Play Online Robot Royale - Free Action Game</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #005bb5;
+            --primary-light: #e6f1ff;
+            --gray-50: #f5f7fa;
+            --gray-100: #e4e7eb;
+            --gray-200: #cbd2d9;
+            --gray-700: #3e4c59;
+            --gray-900: #1f2933;
+            --accent: #ff453a;
+            --accent-dark: #d70015;
+            --success: #30d158;
+            --warning: #ff9f0a;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6eeff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--gray-900), #000);
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .intro {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .play-now-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+        }
+        
+        .play-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 6px 15px rgba(0,113,227,0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .play-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,113,227,0.6);
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .screenshot-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            border: 1px solid var(--gray-100);
+        }
+        
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .screenshot-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .screenshot-info {
+            padding: 1.2rem;
+            background: white;
+        }
+        
+        .screenshot-info h3 {
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .screenshot-info p {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--gray-900);
+        }
+        
+        .feature-card .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        /* Game container */
+        .game-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--gray-100);
+        }
+        
+        .game-header {
+            padding: 1.2rem;
+            background: var(--gray-900);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .fullscreen-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .fullscreen-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .game-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        
+        /* Forum styles */
+        .forum-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+        }
+        
+        .forum-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .forum-form {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--gray-100);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0,113,227,0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .comments-container {
+            max-height: 800px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+        
+        .comment {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray-100);
+            position: relative;
+        }
+        
+        .comment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .comment-date {
+            color: var(--gray-700);
+            font-size: 0.9rem;
+        }
+        
+        .comment-content {
+            color: var(--gray-900);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .reply-btn {
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.3rem 0.5rem;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        
+        .reply-btn:hover {
+            background: rgba(0,113,227,0.1);
+        }
+        
+        .replies {
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--gray-100);
+        }
+        
+        .show-more {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .toggle-comments {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .toggle-comments:hover {
+            background: var(--gray-200);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            color: var(--gray-200);
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            color: var(--gray-200);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .game-iframe {
+                height: 500px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .game-iframe {
+                height: 400px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .screenshots {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .game-iframe {
+                height: 300px;
+            }
+            
+            .game-header {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .replies {
+                padding-left: 0.8rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .play-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">R</div>
+                <div class="logo-text">Online<span>Robot</span>Royale</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#game">Play Game</a>
+                <a href="#features">Features</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#forum">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Play Online Robot Royale - Free Action Game</h1>
+        
+        <section class="intro">
+            <p>Battle it out in Online Robot Royale! Join intense 15-player matches, customize your robot, and aim to be the last one standing. Play for free directly in your browser - no downloads required!</p>
+            <p>Experience the thrill of robot combat in this fast-paced multiplayer shooter. With HTML5 technology, you can play on any device without installation. Join thousands of players worldwide in the ultimate robot battle arena.</p>
+        </section>
+        
+        <div class="play-now-section">
+            <a href="https://www.crazygames.com/game/online-robot-royale" target="_blank" class="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Play Game Now
+            </a>
+        </div>
+        
+        <section id="screenshots">
+            <h2>Game Screenshots</h2>
+            <div class="screenshots">
+                <div class="screenshot-card">
+                    <img src="https://onlinerobotroyale.com/R1.png" alt="Online Robot Royale gameplay screenshot">
+                    <div class="screenshot-info">
+                        <h3>Intense Robot Battles</h3>
+                        <p>Experience fast-paced combat with customizable robots in dynamic arenas.</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <img src="https://onlinerobotroyale.com/R2.png" alt="Online Robot Royale customization screenshot">
+                    <div class="screenshot-info">
+                        <h3>Robot Customization</h3>
+                        <p>Upgrade your robot with powerful weapons, armor, and special abilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features">
+            <h2>Game Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3><span class="icon">15</span>15-Player Battles</h3>
+                    <p>Join intense matches with 15 players from around the world. Only the strongest robot will survive!</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">⚙️</span>Custom Robots</h3>
+                    <p>Build and customize your robot with unique weapons, armor, and abilities to match your play style.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">🌐</span>Browser-Based</h3>
+                    <p>Play instantly in any modern browser. No downloads or installations required. HTML5 powered.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">🏆</span>Competitive Ranking</h3>
+                    <p>Climb the global leaderboards and prove you're the best robot pilot in the arena.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="game">
+            <h2>Play Directly in Browser</h2>
+            <div class="game-container">
+                <div class="game-header">
+                    <div class="game-title">Online Robot Royale</div>
+                    <button class="fullscreen-btn" id="fullscreen-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                        </svg>
+                        Fullscreen
+                    </button>
+                </div>
+                <iframe src="https://www.crazygames.com/game/online-robot-royale" class="game-iframe" id="game-iframe" allow="fullscreen"></iframe>
+            </div>
+        </section>
+        
+        <section id="forum" class="forum-container">
+            <div class="forum-header">
+                <h2>Community Forum</h2>
+                <div class="forum-info">Post anonymously - no registration required!</div>
+            </div>
+            
+            <div class="forum-form">
+                <div class="form-group">
+                    <label for="name">Name (optional)</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name or nickname">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Your Message</label>
+                    <textarea id="comment" class="form-control" placeholder="Share your thoughts, strategies, or feedback..."></textarea>
+                </div>
+                <button class="submit-btn">Post Message</button>
+            </div>
+            
+            <div class="comments-container" id="comments-container">
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">RobotMaster42</div>
+                        <div class="comment-date">June 12, 2023</div>
+                    </div>
+                    <div class="comment-content">
+                        Just won my first match! The plasma rifle is absolutely OP in close combat. Anyone else finding success with it?
+                    </div>
+                    <button class="reply-btn">Reply</button>
+                    
+                    <div class="replies">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <div class="comment-author">SteelSamurai</div>
+                                <div class="comment-date">June 12, 2023</div>
+                            </div>
+                            <div class="comment-content">
+                                @RobotMaster42 Congrats! I prefer the rocket launcher for area control. Plasma is great but leaves you vulnerable during cooldown.
+                            </div>
+                            <button class="reply-btn">Reply</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">MechanicMike</div>
+                        <div class="comment-date">June 10, 2023</div>
+                    </div>
+                    <div class="comment-content">
+                        Best loadout for beginners? Just started playing yesterday and looking for tips!
+                    </div>
+                    <button class="reply-btn">Reply</button>
+                    
+                    <div class="replies">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <div class="comment-author">ArenaVeteran</div>
+                                <div class="comment-date">June 10, 2023</div>
+                            </div>
+                            <div class="comment-content">
+                                @MechanicMike Start with balanced stats - don't focus too much on one attribute. Machine gun + shield is a solid beginner combo.
+                            </div>
+                            <button class="reply-btn">Reply</button>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-header">
+                                <div class="comment-author">NovaBlast</div>
+                                <div class="comment-date">June 11, 2023</div>
+                            </div>
+                            <div class="comment-content">
+                                @MechanicMike Agree with ArenaVeteran. Also, focus on movement first. Positioning is key in this game!
+                            </div>
+                            <button class="reply-btn">Reply</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-author">CircuitQueen</div>
+                        <div class="comment-date">June 8, 2023</div>
+                    </div>
+                    <div class="comment-content">
+                        Love the new desert map! The sandstorms add such an interesting dynamic to matches. Great work devs!
+                    </div>
+                    <button class="reply-btn">Reply</button>
+                </div>
+            </div>
+            
+            <div class="show-more">
+                <button class="toggle-comments">Show More Comments (47+)</button>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Online<span>Robot</span>Royale</div>
+                <p>The ultimate browser-based robot battle arena. Play for free, no downloads required!</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#game">Play Game</a></li>
+                    <li><a href="#features">Game Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#forum">Community Forum</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Game Guide</a></li>
+                    <li><a href="#">Robot Customization</a></li>
+                    <li><a href="#">Weapon Stats</a></li>
+                    <li><a href="#">Map Strategies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 OnlineRobotRoyale.com. All rights reserved. This site is not affiliated with CrazyGames.
+        </div>
+    </footer>
+
+    <script>
+        // Fullscreen functionality
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.getElementById('game-iframe');
+            
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { /* Firefox */
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+                iframe.msRequestFullscreen();
+            }
+        });
+        
+        // Forum functionality
+        document.querySelector('.submit-btn').addEventListener('click', function() {
+            const nameInput = document.getElementById('name');
+            const commentInput = document.getElementById('comment');
+            const name = nameInput.value.trim() || 'Anonymous';
+            const commentText = commentInput.value.trim();
+            
+            if (commentText) {
+                // Basic profanity filter
+                const filteredComment = filterProfanity(commentText);
+                
+                // Create new comment element
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment';
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <div class="comment-author">${name}</div>
+                        <div class="comment-date">${dateStr}</div>
+                    </div>
+                    <div class="comment-content">${filteredComment}</div>
+                    <button class="reply-btn">Reply</button>
+                `;
+                
+                // Add to the top of comments container
+                const commentsContainer = document.getElementById('comments-container');
+                commentsContainer.insertBefore(commentElement, commentsContainer.firstChild);
+                
+                // Clear inputs
+                nameInput.value = '';
+                commentInput.value = '';
+            }
+        });
+        
+        // Simple profanity filter
+        function filterProfanity(text) {
+            const badWords = ['idiot', 'stupid', 'hate', 'moron', 'suck', 'dumb', 'loser'];
+            let filteredText = text;
+            
+            badWords.forEach(word => {
+                const regex = new RegExp(word, 'gi');
+                filteredText = filteredText.replace(regex, '*'.repeat(word.length));
+            });
+            
+            return filteredText;
+        }
+        
+        // Reply button functionality
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('reply-btn')) {
+                const comment = e.target.closest('.comment');
+                const replyBtn = e.target;
+                
+                // Check if reply form already exists
+                if (comment.querySelector('.reply-form')) {
+                    comment.querySelector('.reply-form').remove();
+                    return;
+                }
+                
+                // Create reply form
+                const replyForm = document.createElement('div');
+                replyForm.className = 'reply-form';
+                replyForm.innerHTML = `
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <textarea class="form-control" placeholder="Write your reply..." rows="2"></textarea>
+                    </div>
+                    <button class="submit-reply-btn" style="background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Post Reply</button>
+                `;
+                
+                // Insert after the reply button
+                replyBtn.insertAdjacentElement('afterend', replyForm);
+                
+                // Handle reply submission
+                const submitBtn = replyForm.querySelector('.submit-reply-btn');
+                submitBtn.addEventListener('click', function() {
+                    const replyText = replyForm.querySelector('textarea').value.trim();
+                    if (replyText) {
+                        const name = 'Anonymous'; // Could get from parent comment or prompt
+                        const now = new Date();
+                        const dateStr = now.toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                        });
+                        
+                        const filteredReply = filterProfanity(replyText);
+                        
+                        // Create reply element
+                        const replyElement = document.createElement('div');
+                        replyElement.className = 'comment';
+                        replyElement.innerHTML = `
+                            <div class="comment-header">
+                                <div class="comment-author">${name}</div>
+                                <div class="comment-date">${dateStr}</div>
+                            </div>
+                            <div class="comment-content">${filteredReply}</div>
+                            <button class="reply-btn">Reply</button>
+                        `;
+                        
+                        // Add to replies container or create one
+                        let repliesContainer = comment.querySelector('.replies');
+                        if (!repliesContainer) {
+                            repliesContainer = document.createElement('div');
+                            repliesContainer.className = 'replies';
+                            comment.appendChild(repliesContainer);
+                        }
+                        
+                        repliesContainer.appendChild(replyElement);
+                        replyForm.remove();
+                    }
+                });
+            }
+        });
+        
+        // Toggle comments
+        document.querySelector('.toggle-comments').addEventListener('click', function() {
+            const btn = this;
+            if (btn.textContent.includes('Show More')) {
+                btn.textContent = 'Show Less Comments';
+                // In a real implementation, this would load additional comments
+            } else {
+                btn.textContent = 'Show More Comments (47+)';
+            }
+        });
+    </script>
+</body>
+</html>

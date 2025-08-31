@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Online Robot Royale. Read our terms and conditions for using our free browser game.">
+    <link rel="canonical" href="https://onlinerobotroyale.com/terms">
+    <title>Terms of Service - Online Robot Royale</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #005bb5;
+            --primary-light: #e6f1ff;
+            --gray-50: #f5f7fa;
+            --gray-100: #e4e7eb;
+            --gray-200: #cbd2d9;
+            --gray-700: #3e4c59;
+            --gray-900: #1f2933;
+            --accent: #ff453a;
+            --accent-dark: #d70015;
+            --success: #30d158;
+            --warning: #ff9f0a;
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6eeff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--gray-900), #000);
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+            width: 100%;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .last-updated {
+            color: var(--gray-700);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 2rem 0 0.8rem;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--gray-700);
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        
+        .back-to-home:hover {
+            color: var(--primary-dark);
+        }
+        
+        .important-note {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .important-note h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .section-number {
+            color: var(--primary);
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            color: var(--gray-200);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-200);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            color: var(--gray-200);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .content-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">R</div>
+                <div class="logo-text">Online<span>Robot</span>Royale</div>
+            </div>
+            <nav class="nav-links">
+                <a href="https://onlinerobotroyale.com">Home</a>
+                <a href="https://onlinerobotroyale.com#game">Play Game</a>
+                <a href="https://onlinerobotroyale.com#forum">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="https://onlinerobotroyale.com" class="back-to-home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+        
+        <div class="terms-header">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: June 15, 2023</p>
+        </div>
+        
+        <div class="content-card">
+            <div class="important-note">
+                <h3>Important Notice</h3>
+                <p>Please read these Terms of Service carefully before using OnlineRobotRoyale.com. By accessing or using our website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our website.</p>
+            </div>
+            
+            <h2><span class="section-number">1.</span> Acceptance of Terms</h2>
+            <p>By accessing and using OnlineRobotRoyale.com ("the Website"), you accept and agree to be bound by the terms and provisions of this agreement. In addition, when using this Website's particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+            
+            <h2><span class="section-number">2.</span> Description of Service</h2>
+            <p>OnlineRobotRoyale.com provides users with access to browser-based games, specifically the "Online Robot Royale" game, which is embedded from CrazyGames.com. The service may include:</p>
+            <ul>
+                <li>Access to free browser games</li>
+                <li>Community forums for discussion</li>
+                <li>Game-related content and information</li>
+                <li>Other features that may be added from time to time</li>
+            </ul>
+            
+            <h2><span class="section-number">3.</span> User Responsibilities</h2>
+            <p>As a user of this Website, you agree to the following:</p>
+            
+            <h3>3.1. Account Security</h3>
+            <p>If you create an account on our Website, you are responsible for maintaining the confidentiality of your account and password.</p>
+            
+            <h3>3.2. Prohibited Activities</h3>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the Website for any unlawful purpose</li>
+                <li>Post or transmit any material that is harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable</li>
+                <li>Impersonate any person or entity or falsely state or otherwise misrepresent your affiliation with a person or entity</li>
+                <li>Interfere with or disrupt the Website or servers or networks connected to the Website</li>
+                <li>Attempt to gain unauthorized access to any portion of the Website or any other systems or networks connected to the Website</li>
+                <li>Use any automated means to access the Website or collect any information from the Website</li>
+            </ul>
+            
+            <h2><span class="section-number">4.</span> Intellectual Property</h2>
+            
+            <h3>4.1. Our Content</h3>
+            <p>All content on this Website, including but not limited to text, graphics, logos, images, and software, is the property of OnlineRobotRoyale.com or its content suppliers and protected by international copyright laws.</p>
+            
+            <h3>4.2. Game Content</h3>
+            <p>The "Online Robot Royale" game is provided by CrazyGames.com and is subject to their respective intellectual property rights. We do not claim ownership of the game content.</p>
+            
+            <h3>4.3. User Content</h3>
+            <p>By posting or submitting content to our Website (including forum posts), you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, publicly perform, publicly display, reproduce, and distribute such content on and through the Website.</p>
+            
+            <h2><span class="section-number">5.</span> Third-Party Services</h2>
+            <p>Our Website utilizes various third-party services:</p>
+            
+            <h3>5.1. Game Embedding</h3>
+            <p>We embed games from CrazyGames.com. When you play these games, you are subject to CrazyGames' Terms of Service and Privacy Policy.</p>
+            
+            <h3>5.2. Advertising</h3>
+            <p>We use Google AdSense to display advertisements. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our sites and/or other sites on the Internet.</p>
+            
+            <h3>5.3. Links to Other Websites</h3>
+            <p>Our Website may contain links to third-party websites. We are not responsible for the content or privacy practices of these websites.</p>
+            
+            <h2><span class="section-number">6.</span> Disclaimer of Warranties</h2>
+            <p>The Website is provided on an "AS IS" and "AS AVAILABLE" basis. OnlineRobotRoyale.com expressly disclaims all warranties of any kind, whether express or implied, including, but not limited to the implied warranties of merchantability, fitness for a particular purpose and non-infringement.</p>
+            
+            <p>We make no warranty that:</p>
+            <ul>
+                <li>The Website will meet your requirements</li>
+                <li>The Website will be uninterrupted, timely, secure, or error-free</li>
+                <li>The results that may be obtained from the use of the Website will be accurate or reliable</li>
+                <li>The quality of any products, services, information, or other material purchased or obtained by you through the Website will meet your expectations</li>
+                <li>Any errors in the software will be corrected</li>
+            </ul>
+            
+            <h2><span class="section-number">7.</span> Limitation of Liability</h2>
+            <p>You expressly understand and agree that OnlineRobotRoyale.com shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data or other intangible losses (even if we have been advised of the possibility of such damages), resulting from:</p>
+            <ul>
+                <li>The use or the inability to use the Website</li>
+                <li>The cost of procurement of substitute goods and services resulting from any goods, data, information or services purchased or obtained or messages received or transactions entered into through or from the Website</li>
+                <li>Unauthorized access to or alteration of your transmissions or data</li>
+                <li>Statements or conduct of any third party on the Website</li>
+                <li>Any other matter relating to the Website</li>
+            </ul>
+            
+            <h2><span class="section-number">8.</span> Indemnification</h2>
+            <p>You agree to indemnify and hold harmless OnlineRobotRoyale.com, its owners, employees, and affiliates from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of content you submit, post, transmit or make available through the Website, your use of the Website, your connection to the Website, your violation of the Terms of Service, or your violation of any rights of another.</p>
+            
+            <h2><span class="section-number">9.</span> Modifications to Service</h2>
+            <p>We reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Website (or any part thereof) with or without notice. You agree that we shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Website.</p>
+            
+            <h2><span class="section-number">10.</span> Changes to Terms</h2>
+            <p>We may revise these Terms of Service from time to time. The most current version will always be posted on our Website. By continuing to access or use our Website after those revisions become effective, you agree to be bound by the revised terms.</p>
+            
+            <h2><span class="section-number">11.</span> Governing Law</h2>
+            <p>These Terms shall be governed and construed in accordance with the laws of the United States and the State of Delaware, without regard to its conflict of law provisions.</p>
+            
+            <h2><span class="section-number">12.</span> Contact Information</h2>
+            <p>If you have any questions about these Terms of Service, please contact us at:</p>
+            
+            <div class="important-note">
+                <h3>Online Robot Royale</h3>
+                <p>Email: legal@onlinerobotroyale.com</p>
+                <p>Website: <a href="https://onlinerobotroyale.com/contact">onlinerobotroyale.com/contact</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Online<span>Robot</span>Royale</div>
+                <p>The ultimate browser-based robot battle arena. Play for free, no downloads required!</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://onlinerobotroyale.com">Home</a></li>
+                    <li><a href="https://onlinerobotroyale.com#game">Play Game</a></li>
+                    <li><a href="https://onlinerobotroyale.com#forum">Community</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="https://onlinerobotroyale.com/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://onlinerobotroyale.com/terms">Terms of Service</a></li>
+                    <li><a href="https://onlinerobotroyale.com/cookie-policy">Cookie Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="https://onlinerobotroyale.com/faq">FAQ</a></li>
+                    <li><a href="https://onlinerobotroyale.com/contact">Contact Us</a></li>
+                    <li><a href="https://onlinerobotroyale.com/feedback">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 OnlineRobotRoyale.com. All rights reserved. This site is not affiliated with CrazyGames.
+        </div>
+    </footer>
+</body>
+</html>
